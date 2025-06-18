@@ -22,20 +22,20 @@ const muscleGroups = [
 ];
 
 export const Muscle = () => {
-  const router = useRouter();
+  const { push } = useRouter();
 
   const handleSelect = (muscle: string) => {
-    router.push(`workouthelper?muscle=${muscle}`);
+    push(`workouthelper?muscle=${muscle}`);
   };
   console.log(handleSelect);
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button className="bg-black text-white">Workout Helper</Button>
+      <DropdownMenuTrigger asChild onClick={() => push("/workouthelper")}>
+        <Button className=" text-white">Workout Helper</Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="bg-black text-white w-48">
+      <DropdownMenuContent className="bg-gray-800 text-white w-48">
         <div className="font-semibold px-2 py-1 mb-2">Muscle Groups</div>
-        {muscleGroups.map((muscle) => (
+        {/* {muscleGroups.map((muscle) => (
           <DropdownMenuItem asChild key={muscle}>
             <Button
               variant="ghost"
@@ -45,7 +45,7 @@ export const Muscle = () => {
               {muscle}
             </Button>
           </DropdownMenuItem>
-        ))}
+        ))} */}
       </DropdownMenuContent>
     </DropdownMenu>
   );

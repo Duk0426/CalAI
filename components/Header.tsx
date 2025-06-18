@@ -45,7 +45,7 @@ export const Header = () => {
       </div>
 
       {menuOpen && (
-        <div className="absolute z-50 top-[60px] right-4 w-48 bg-white text-black rounded shadow-md p-4 md:hidden">
+        <div className="absolute z-50 top-[60px] left-4 w-48 bg-white text-black rounded shadow-md p-4 md:hidden">
           <div className="flex flex-col gap-2">
             <Button variant="ghost" onClick={() => setMenuOpen(false)}>
               Calorie AI
